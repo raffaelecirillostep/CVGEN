@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,8 +35,13 @@ public class QualificationServiceImpl implements QualificationService {
 
     @Override
     public Qualification deleteQualification(Qualification qualification) {
-        repo.delete(qualification);
-        qualification.setDeleted(true);
+        qualification.setDeleted(!qualification.isDeleted());
+        if(qualification.isDeleted()){
+            qualification.setDeletedAt(new Date());
+        } else {
+            qualification.setDeletedAt(null);
+        }
+        repo.save(qualification);
         return qualification;
     }
 }

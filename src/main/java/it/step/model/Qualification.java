@@ -22,7 +22,7 @@ public class Qualification {
     private String description;
     private Date qualificationDate;
     private int vote;
-    private boolean isDeleted;
+    private boolean isDeleted = false;
     private Date deletedAt;
 
 }
