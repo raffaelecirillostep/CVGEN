@@ -1,20 +1,16 @@
-package it.step.model;
+package it.step.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-@Document(collection = "Qualifications")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Qualification {
+public class QualificationDTO {
 
-    @Id
     private String id;
     private String type;
     private String qualification;
