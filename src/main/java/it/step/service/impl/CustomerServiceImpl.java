@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -39,8 +40,9 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer deleteById(String id) {
         Customer c = repo.findById(id).orElse(null);
         if(c != null) {
-            repo.delete(c);
+            c.setDeleted(true);
+            c.setDeletedAt(new Date());
         }
-        return c;
+        return c != null ? repo.save(c) : null;
     }
 }
