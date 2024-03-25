@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+   <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+                margin: 10mm auto;
+                background-color: #f4f4f4;
+                box-shadow: none;
+            }
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0 0 50px; 
+            background-color: #f4f4f4;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-color: #007bff; /* Azzurro */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        section {
+            background-color: white;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        section:last-of-type {
+
+        }
+        h2 {
+            color: #333333;
+        }
+        footer {
+            background-color: #007bff; /* Azzurro */
+            color: white;
+            text-align: center;
+            padding: 3px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+		}
+			
+		.candidate-photo {
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* aggiunge ombreggiatura */
+            position: absolute; 
+            top: 10px; 
+            right: 10px; 
+        }
+		
+    </style>
+</head>
+<body>
+    <header>
+	 <img src="path_to_image.jpg" alt="Foto del Candidato" class="candidate-photo" th:src="@{path_to_image.jpg}"/>
+        <h1 th:text="${candidato.nome} + ' ' + ${candidato.cognome}">Nome Cognome</h1>
+        <p th:text="${candidato.professione}">Professione</p>
+    </header>
+
+   <section>
+        <h2>Informazioni Personali</h2>
+        <p>Data di nascita: <span th:text="${candidato.dataNascita}">01/01/1900</span></p>
+        <p>Nazionalità: <span th:text="${candidato.nazionalita}">Italiana</span></p>
+        <!-- Altre informazioni personali -->
+    </section>
+
+    <section>
+        <h2>Educazione e Formazione</h2>
+        <!-- Ripeti per ogni istruzione/formazione -->
+        <div th:each="edu : ${candidato.istruzione}">
+            <p th:text="${edu.titolo}">Titolo di studio</p>
+            <p th:text="${edu.istituto}">Nome istituto</p>
+            <p th:text="${edu.dataInizio} + ' - ' + ${edu.dataFine}">Data inizio - Data fine</p>
+            <p th:text="${edu.descrizione}">Descrizione</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Esperienza Lavorativa</h2>
+        <!-- Ripeti per ogni esperienza lavorativa -->
+        <div th:each="lavoro : ${candidato.esperienze}">
+            <p th:text="${lavoro.posizione}">Posizione</p>
+            <p th:text="${lavoro.azienda}">Nome azienda</p>
+            <p th:text="${lavoro.dataInizio} + ' - ' + ${lavoro.dataFine}">Data inizio - Data fine</p>
+            <p th:text="${lavoro.descrizione}">Descrizione</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Competenze</h2>
+        <ul>
+            <!-- Ripeti per ogni competenza -->
+            <li th:each="competenza : ${candidato.competenze}" th:text="${competenza}">Competenza</li>
+        </ul>
+    </section>
+	
+     <footer>
+    <p>Curriculum Vitae generato il <span th:text="${#dates.format(candidato.dataGenerazione, 'dd/MM/yyyy')}">01-01-1900</span></p>
+
+    </footer>
+</body>
+</html>
