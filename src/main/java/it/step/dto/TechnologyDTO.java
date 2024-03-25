@@ -9,16 +9,10 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class QualificationDTO {
-
+public class TechnologyDTO {
     private String id;
-    private String type;
-    private String qualification;
-    private String institute;
+    private String name;
     private String description;
-    private Date qualificationDate;
-    private int vote;
-    private boolean isDeleted;
+    private boolean isDeleted = false;
     private Date deletedAt;
-
 }
