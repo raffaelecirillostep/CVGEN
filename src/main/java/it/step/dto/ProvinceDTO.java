@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProvinceDto {
+public class ProvinceDTO {
 
     private String id;
     private String name;

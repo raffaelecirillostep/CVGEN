@@ -1,4 +1,4 @@
-package it.step.service.serviceImpl;
+package it.step.service.impl;
 
 import it.step.model.Province;
 import it.step.repository.ProvinceRepo;
