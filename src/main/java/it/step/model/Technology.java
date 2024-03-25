@@ -8,20 +8,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-@Document(collection = "Qualifications")
+@Document(collection = "technologies")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Qualification {
+public class Technology {
 
     @Id
     private String id;
-    private String type;
-    private String qualification;
-    private String institute;
+    private String name;
     private String description;
-    private Date qualificationDate;
-    private int vote;
     private boolean isDeleted = false;
     private Date deletedAt;
 
