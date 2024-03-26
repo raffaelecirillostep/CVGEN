@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 public class ProvinceDTO {
 
     private String id;
-    private Integer id_provincia;
     private String sigla;
     private  String provincia;
 }
