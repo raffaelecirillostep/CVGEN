@@ -4,16 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProvinceDTO {
 
     private String id;
-    private String name;
-
-    private Boolean isDeleted;
-    private Date deletedAt;
+    private Integer id_provincia;
+    private String sigla;
+    private  String provincia;
 }

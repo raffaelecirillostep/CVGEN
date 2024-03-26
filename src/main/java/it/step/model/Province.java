@@ -18,6 +18,4 @@ public class Province {
     private Integer id_provincia;
     private String sigla;
     private  String provincia;
-//    private Boolean isDeleted;
-//    private Date deletedAt;
 }
