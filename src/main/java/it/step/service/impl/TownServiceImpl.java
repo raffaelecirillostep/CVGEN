@@ -1,5 +1,6 @@
 package it.step.service.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import it.step.model.Otherinfo;
 
 
@@ -7,9 +8,13 @@ import it.step.model.Town;
 import it.step.repository.TownRepo;
 import it.step.service.TownService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -41,5 +46,19 @@ public class TownServiceImpl implements TownService {
         town.setIsDeleted(true);
         town.setDeletedAt(new Date());
         return town;
+    }
+
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
+    public void insertCitiesFromJson(String jsonFilePath) throws IOException {
+        // Leggi il file JSON
+        ObjectMapper objectMapper = new ObjectMapper();
+        ClassPathResource resource = new ClassPathResource(jsonFilePath);
+        List<Town> towns = Arrays.asList(objectMapper.readValue(resource.getInputStream(), Town[].class));
+
+        // Inserisci i dati su MongoDB
+        mongoTemplate.insert(towns, Town.class);
     }
 }
