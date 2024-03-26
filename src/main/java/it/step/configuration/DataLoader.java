@@ -1,4 +1,4 @@
-package it.step;
+package it.step.configuration;
 
 import it.step.service.ProvinceService;
 import it.step.service.TownService;
