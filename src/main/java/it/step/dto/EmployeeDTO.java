@@ -16,7 +16,6 @@ import java.util.List;
 @AllArgsConstructor
 public class EmployeeDTO {
 
-    @Id
     private String id;
     private String name;
     private String surname;
@@ -27,7 +26,6 @@ public class EmployeeDTO {
     private String nationality;
     private String telephone;
     private String email;
-    private List<Qualification> qualifications;
     private boolean isDeleted;
     private Date deletedAt;
 

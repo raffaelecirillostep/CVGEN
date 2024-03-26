@@ -9,24 +9,22 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 import java.util.List;
 
-@Document(collection = "employees")
+@Document(collection = "experiences")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Employee {
+public class Experience {
 
     @Id
     private String id;
-    private String name;
-    private String surname;
-    private Town town;
-    private Province province;
-    private String gender;
-    private Date dob;
-    private String nationality;
-    private String telephone;
-    private String email;
+    private Date startedAt;
+    private Date endedAt;
+    private boolean inProgress;
+    private String jobTitle;
+    private String projectName;
+    private String customerName;
+    private String description;
+    private List<Technology> technologies;
     private boolean isDeleted = false;
     private Date deletedAt;
-
 }
