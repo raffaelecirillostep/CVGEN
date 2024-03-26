@@ -1,0 +1,537 @@
+[
+	{
+		"id_provincia" : 1,
+		"sigla" : "PD",
+		"provincia" : "Padova"
+	},
+	{
+		"id_provincia" : 2,
+		"sigla" : "LO",
+		"provincia" : "Lodi"
+	},
+	{
+		"id_provincia" : 3,
+		"sigla" : "LC",
+		"provincia" : "Lecco"
+	},
+	{
+		"id_provincia" : 4,
+		"sigla" : "SI",
+		"provincia" : "Siena"
+	},
+	{
+		"id_provincia" : 5,
+		"sigla" : "OR",
+		"provincia" : "Oristano"
+	},
+	{
+		"id_provincia" : 6,
+		"sigla" : "PE",
+		"provincia" : "Pescara"
+	},
+	{
+		"id_provincia" : 7,
+		"sigla" : "MI",
+		"provincia" : "Milano"
+	},
+	{
+		"id_provincia" : 8,
+		"sigla" : "PT",
+		"provincia" : "Pistoia"
+	},
+	{
+		"id_provincia" : 9,
+		"sigla" : "PZ",
+		"provincia" : "Potenza"
+	},
+	{
+		"id_provincia" : 10,
+		"sigla" : "RG",
+		"provincia" : "Ragusa"
+	},
+	{
+		"id_provincia" : 11,
+		"sigla" : "FG",
+		"provincia" : "Foggia"
+	},
+	{
+		"id_provincia" : 12,
+		"sigla" : "CN",
+		"provincia" : "Cuneo"
+	},
+	{
+		"id_provincia" : 13,
+		"sigla" : "MT",
+		"provincia" : "Matera"
+	},
+	{
+		"id_provincia" : 14,
+		"sigla" : "AQ",
+		"provincia" : "L'Aquila"
+	},
+	{
+		"id_provincia" : 15,
+		"sigla" : "RI",
+		"provincia" : "Rieti"
+	},
+	{
+		"id_provincia" : 16,
+		"sigla" : "SA",
+		"provincia" : "Salerno"
+	},
+	{
+		"id_provincia" : 17,
+		"sigla" : "NA",
+		"provincia" : "Napoli"
+	},
+	{
+		"id_provincia" : 18,
+		"sigla" : "CT",
+		"provincia" : "Catania"
+	},
+	{
+		"id_provincia" : 19,
+		"sigla" : "FR",
+		"provincia" : "Frosinone"
+	},
+	{
+		"id_provincia" : 20,
+		"sigla" : "CS",
+		"provincia" : "Cosenza"
+	},
+	{
+		"id_provincia" : 21,
+		"sigla" : "BS",
+		"provincia" : "Brescia"
+	},
+	{
+		"id_provincia" : 22,
+		"sigla" : "PU",
+		"provincia" : "Pesaro e Urbino"
+	},
+	{
+		"id_provincia" : 23,
+		"sigla" : "CR",
+		"provincia" : "Cremona"
+	},
+	{
+		"id_provincia" : 24,
+		"sigla" : "MN",
+		"provincia" : "Mantova"
+	},
+	{
+		"id_provincia" : 25,
+		"sigla" : "VT",
+		"provincia" : "Viterbo"
+	},
+	{
+		"id_provincia" : 26,
+		"sigla" : "LE",
+		"provincia" : "Lecce"
+	},
+	{
+		"id_provincia" : 27,
+		"sigla" : "VV",
+		"provincia" : "Vibo Valentia"
+	},
+	{
+		"id_provincia" : 28,
+		"sigla" : "AP",
+		"provincia" : "Ascoli Piceno"
+	},
+	{
+		"id_provincia" : 29,
+		"sigla" : "TR",
+		"provincia" : "Terni"
+	},
+	{
+		"id_provincia" : 30,
+		"sigla" : "CB",
+		"provincia" : "Campobasso"
+	},
+	{
+		"id_provincia" : 31,
+		"sigla" : "BA",
+		"provincia" : "Bari"
+	},
+	{
+		"id_provincia" : 32,
+		"sigla" : "IS",
+		"provincia" : "Isernia"
+	},
+	{
+		"id_provincia" : 33,
+		"sigla" : "CL",
+		"provincia" : "Caltanissetta"
+	},
+	{
+		"id_provincia" : 34,
+		"sigla" : "ME",
+		"provincia" : "Messina"
+	},
+	{
+		"id_provincia" : 35,
+		"sigla" : "AL",
+		"provincia" : "Alessandria"
+	},
+	{
+		"id_provincia" : 36,
+		"sigla" : "BG",
+		"provincia" : "Bergamo"
+	},
+	{
+		"id_provincia" : 37,
+		"sigla" : "RO",
+		"provincia" : "Rovigo"
+	},
+	{
+		"id_provincia" : 38,
+		"sigla" : "VR",
+		"provincia" : "Verona"
+	},
+	{
+		"id_provincia" : 39,
+		"sigla" : "RM",
+		"provincia" : "Roma"
+	},
+	{
+		"id_provincia" : 40,
+		"sigla" : "RC",
+		"provincia" : "Reggio Calabria"
+	},
+	{
+		"id_provincia" : 41,
+		"sigla" : "PC",
+		"provincia" : "Piacenza"
+	},
+	{
+		"id_provincia" : 42,
+		"sigla" : "SS",
+		"provincia" : "Sassari"
+	},
+	{
+		"id_provincia" : 43,
+		"sigla" : "EN",
+		"provincia" : "Enna"
+	},
+	{
+		"id_provincia" : 44,
+		"sigla" : "AT",
+		"provincia" : "Asti"
+	},
+	{
+		"id_provincia" : 45,
+		"sigla" : "TO",
+		"provincia" : "Torino"
+	},
+	{
+		"id_provincia" : 46,
+		"sigla" : "BL",
+		"provincia" : "Belluno"
+	},
+	{
+		"id_provincia" : 47,
+		"sigla" : "VA",
+		"provincia" : "Varese"
+	},
+	{
+		"id_provincia" : 48,
+		"sigla" : "MB",
+		"provincia" : "Monza e Brianza"
+	},
+	{
+		"id_provincia" : 49,
+		"sigla" : "NO",
+		"provincia" : "Novara"
+	},
+	{
+		"id_provincia" : 50,
+		"sigla" : "AG",
+		"provincia" : "Agrigento"
+	},
+	{
+		"id_provincia" : 51,
+		"sigla" : "AN",
+		"provincia" : "Ancona"
+	},
+	{
+		"id_provincia" : 52,
+		"sigla" : "VI",
+		"provincia" : "Vicenza"
+	},
+	{
+		"id_provincia" : 53,
+		"sigla" : "UD",
+		"provincia" : "Udine"
+	},
+	{
+		"id_provincia" : 54,
+		"sigla" : "AV",
+		"provincia" : "Avellino"
+	},
+	{
+		"id_provincia" : 55,
+		"sigla" : "CE",
+		"provincia" : "Caserta"
+	},
+	{
+		"id_provincia" : 56,
+		"sigla" : "BI",
+		"provincia" : "Biella"
+	},
+	{
+		"id_provincia" : 57,
+		"sigla" : "BN",
+		"provincia" : "Benevento"
+	},
+	{
+		"id_provincia" : 58,
+		"sigla" : "IM",
+		"provincia" : "Imperia"
+	},
+	{
+		"id_provincia" : 59,
+		"sigla" : "TN",
+		"provincia" : "Trento"
+	},
+	{
+		"id_provincia" : 60,
+		"sigla" : "PV",
+		"provincia" : "Pavia"
+	},
+	{
+		"id_provincia" : 61,
+		"sigla" : "VC",
+		"provincia" : "Vercelli"
+	},
+	{
+		"id_provincia" : 62,
+		"sigla" : "SV",
+		"provincia" : "Savona"
+	},
+	{
+		"id_provincia" : 63,
+		"sigla" : "TE",
+		"provincia" : "Teramo"
+	},
+	{
+		"id_provincia" : 64,
+		"sigla" : "SO",
+		"provincia" : "Sondrio"
+	},
+	{
+		"id_provincia" : 65,
+		"sigla" : "PR",
+		"provincia" : "Parma"
+	},
+	{
+		"id_provincia" : 66,
+		"sigla" : "CO",
+		"provincia" : "Como"
+	},
+	{
+		"id_provincia" : 67,
+		"sigla" : "CZ",
+		"provincia" : "Catanzaro"
+	},
+	{
+		"id_provincia" : 68,
+		"sigla" : "RE",
+		"provincia" : "Reggio Emilia"
+	},
+	{
+		"id_provincia" : 69,
+		"sigla" : "TP",
+		"provincia" : "Trapani"
+	},
+	{
+		"id_provincia" : 70,
+		"sigla" : "BZ",
+		"provincia" : "Bolzano\/Bozen"
+	},
+	{
+		"id_provincia" : 71,
+		"sigla" : "RA",
+		"provincia" : "Ravenna"
+	},
+	{
+		"id_provincia" : 72,
+		"sigla" : "PA",
+		"provincia" : "Palermo"
+	},
+	{
+		"id_provincia" : 73,
+		"sigla" : "AO",
+		"provincia" : "Valle d'Aosta"
+	},
+	{
+		"id_provincia" : 74,
+		"sigla" : "FM",
+		"provincia" : "Fermo"
+	},
+	{
+		"id_provincia" : 75,
+		"sigla" : "CH",
+		"provincia" : "Chieti"
+	},
+	{
+		"id_provincia" : 76,
+		"sigla" : "TV",
+		"provincia" : "Treviso"
+	},
+	{
+		"id_provincia" : 77,
+		"sigla" : "BO",
+		"provincia" : "Bologna"
+	},
+	{
+		"id_provincia" : 78,
+		"sigla" : "LU",
+		"provincia" : "Lucca"
+	},
+	{
+		"id_provincia" : 79,
+		"sigla" : "SP",
+		"provincia" : "La Spezia"
+	},
+	{
+		"id_provincia" : 80,
+		"sigla" : "PN",
+		"provincia" : "Pordenone"
+	},
+	{
+		"id_provincia" : 81,
+		"sigla" : "BT",
+		"provincia" : "Barletta-Andria-Trani"
+	},
+	{
+		"id_provincia" : 82,
+		"sigla" : "AR",
+		"provincia" : "Arezzo"
+	},
+	{
+		"id_provincia" : 83,
+		"sigla" : "VE",
+		"provincia" : "Venezia"
+	},
+	{
+		"id_provincia" : 84,
+		"sigla" : "VB",
+		"provincia" : "Verbano Cusio Ossola"
+	},
+	{
+		"id_provincia" : 85,
+		"sigla" : "MC",
+		"provincia" : "Macerata"
+	},
+	{
+		"id_provincia" : 86,
+		"sigla" : "LT",
+		"provincia" : "Latina"
+	},
+	{
+		"id_provincia" : 87,
+		"sigla" : "SU",
+		"provincia" : "Sud Sardegna"
+	},
+	{
+		"id_provincia" : 88,
+		"sigla" : "GR",
+		"provincia" : "Grosseto"
+	},
+	{
+		"id_provincia" : 89,
+		"sigla" : "GE",
+		"provincia" : "Genova"
+	},
+	{
+		"id_provincia" : 90,
+		"sigla" : "FE",
+		"provincia" : "Ferrara"
+	},
+	{
+		"id_provincia" : 91,
+		"sigla" : "NU",
+		"provincia" : "Nuoro"
+	},
+	{
+		"id_provincia" : 92,
+		"sigla" : "CA",
+		"provincia" : "Cagliari"
+	},
+	{
+		"id_provincia" : 93,
+		"sigla" : "PG",
+		"provincia" : "Perugia"
+	},
+	{
+		"id_provincia" : 94,
+		"sigla" : "SR",
+		"provincia" : "Siracusa"
+	},
+	{
+		"id_provincia" : 95,
+		"sigla" : "MS",
+		"provincia" : "Massa e Carrara"
+	},
+	{
+		"id_provincia" : 96,
+		"sigla" : "TA",
+		"provincia" : "Taranto"
+	},
+	{
+		"id_provincia" : 97,
+		"sigla" : "FI",
+		"provincia" : "Firenze"
+	},
+	{
+		"id_provincia" : 98,
+		"sigla" : "FC",
+		"provincia" : "Forlì-Cesena"
+	},
+	{
+		"id_provincia" : 99,
+		"sigla" : "MO",
+		"provincia" : "Modena"
+	},
+	{
+		"id_provincia" : 100,
+		"sigla" : "RN",
+		"provincia" : "Rimini"
+	},
+	{
+		"id_provincia" : 101,
+		"sigla" : "KR",
+		"provincia" : "Crotone"
+	},
+	{
+		"id_provincia" : 102,
+		"sigla" : "LI",
+		"provincia" : "Livorno"
+	},
+	{
+		"id_provincia" : 103,
+		"sigla" : "PI",
+		"provincia" : "Pisa"
+	},
+	{
+		"id_provincia" : 104,
+		"sigla" : "BR",
+		"provincia" : "Brindisi"
+	},
+	{
+		"id_provincia" : 105,
+		"sigla" : "PO",
+		"provincia" : "Prato"
+	},
+	{
+		"id_provincia" : 106,
+		"sigla" : "GO",
+		"provincia" : "Gorizia"
+	},
+	{
+		"id_provincia" : 107,
+		"sigla" : "TS",
+		"provincia" : "Trieste"
+	}
+]
