@@ -46,8 +46,8 @@ public class TownServiceImpl implements TownService {
 
     @Override
     public Town deleteTown(Town town) {
-        town.setIsDeleted(true);
-        town.setDeletedAt(new Date());
+       // town.setIsDeleted(true);
+        //town.setDeletedAt(new Date());
         return town;
     }
 
