@@ -51,12 +51,13 @@ public class ProvinceServiceImpl implements ProvinceService {
 
 
     public void insertProvincesFromJson(String jsonFilePath) throws IOException {
-        // Leggi il file JSON
-        ObjectMapper objectMapper = new ObjectMapper();
-        ClassPathResource resource = new ClassPathResource(jsonFilePath);
-        List<Province> provinces = Arrays.asList(objectMapper.readValue(resource.getInputStream(), Province[].class));
+        if (repo.count()== 0) {
+            ObjectMapper objectMapper = new ObjectMapper();
+            ClassPathResource resource = new ClassPathResource(jsonFilePath);
+            List<Province> provinces = Arrays.asList(objectMapper.readValue(resource.getInputStream(), Province[].class));
 
-        // Inserisci i dati su MongoDB
-        mongoTemplate.insert(provinces, Province.class);
+            // Inserisci i dati su MongoDB
+            mongoTemplate.insert(provinces, Province.class);
+        }
     }
 }
