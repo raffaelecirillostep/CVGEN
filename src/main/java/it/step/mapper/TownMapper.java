@@ -6,7 +6,7 @@ import it.step.model.Qualification;
 import it.step.model.Town;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel="spring")
 public interface TownMapper {
 
     Town townDtoToTown(TownDTO townDTO);
