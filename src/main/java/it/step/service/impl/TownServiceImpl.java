@@ -26,6 +26,9 @@ public class TownServiceImpl implements TownService {
     @Autowired
     private TownRepo townRepo;
 
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
     @Override
     public List<Town> getAllTowns() {
         return townRepo.findAll();
@@ -47,10 +50,6 @@ public class TownServiceImpl implements TownService {
         town.setDeletedAt(new Date());
         return town;
     }
-
-
-    @Autowired
-    private MongoTemplate mongoTemplate;
 
     public void insertCitiesFromJson(String jsonFilePath) throws IOException {
         // Leggi il file JSON
