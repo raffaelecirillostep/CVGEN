@@ -12,8 +12,8 @@ public class Province {
 
     @Id
     private String id;
-    private  String name;
-
+    private String sigla;
+    private  String provincia;
     private Boolean isDeleted;
     private Date deletedAt;
 }
