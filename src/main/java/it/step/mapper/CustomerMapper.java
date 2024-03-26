@@ -4,7 +4,7 @@ import it.step.dto.CustomerDTO;
 import it.step.model.Customer;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel="spring")
 public interface CustomerMapper {
 
     public CustomerDTO customerToCustomerDTO (Customer customer);
