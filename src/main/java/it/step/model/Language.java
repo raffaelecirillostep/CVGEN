@@ -7,22 +7,16 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
-import java.util.List;
 
+@Document(collection = "languages")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Experience {
+public class Language {
 
+    @Id
     private String id;
-    private Date startedAt;
-    private Date endedAt;
-    private boolean inProgress;
-    private String jobTitle;
-    private String projectName;
-    private String customerName;
-    private String description;
-    private List<String> technologies;
-    private boolean isDeleted = false;
+    private String language;
+    private boolean isDeleted;
     private Date deletedAt;
 }
