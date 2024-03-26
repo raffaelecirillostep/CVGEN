@@ -53,11 +53,13 @@ public class TownServiceImpl implements TownService {
 
     public void insertCitiesFromJson(String jsonFilePath) throws IOException {
         // Leggi il file JSON
+        if (townRepo.count() == 0) {
         ObjectMapper objectMapper = new ObjectMapper();
         ClassPathResource resource = new ClassPathResource(jsonFilePath);
         List<Town> towns = Arrays.asList(objectMapper.readValue(resource.getInputStream(), Town[].class));
 
         // Inserisci i dati su MongoDB
         mongoTemplate.insert(towns, Town.class);
+    }
     }
 }
