@@ -20,9 +20,6 @@ public class Town {
     @Id
     private String id;
 
-    @JsonProperty("ID")
-    private Integer ID;
-
     @JsonProperty("DATAISTITUZIONE")
     private Date dataIstituzione;
 
@@ -73,12 +70,6 @@ public class Town {
 
     @JsonProperty("COD_DENOM")
     private String codDenominazione;
-
-    @JsonProperty("ISDELETED")
-    private Boolean isDeleted;
-
-    @JsonProperty("DELETEDAT")
-    private Date deletedAt;
 
 
 }
