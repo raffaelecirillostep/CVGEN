@@ -11,9 +11,10 @@ import java.util.Date;
 @AllArgsConstructor
 public class CustomerDTO {
 
-    private String id;
-    private String name;
-    private boolean isDeleted;
-    private Date deletedAt;
+    private Date initialDate;
+    private Date endDate;
+    private Boolean inProgress;
+    private String qualification;
+    private String provider;
 
 }

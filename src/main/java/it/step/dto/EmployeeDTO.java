@@ -19,14 +19,14 @@ public class EmployeeDTO {
     private String id;
     private String name;
     private String surname;
-    private Town town;
-    private Province province;
+    private TownDTO town;
+    private ProvinceDTO province;
     private String gender;
     private Date dob;
     private String nationality;
     private String telephone;
     private String email;
-    private boolean isDeleted;
+    private Boolean isDeleted;
     private Date deletedAt;
 
 }

@@ -3,26 +3,18 @@ package it.step.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-@Document(collection = "qualifications")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Qualification {
 
-    @Id
-    private String id;
-    private String type;
+    private Date initialDate;
+    private Date endDate;
+    private boolean inProgress;
     private String qualification;
-    private String institute;
-    private String description;
-    private Date qualificationDate;
-    private int vote;
-    private boolean isDeleted = false;
-    private Date deletedAt;
+    private String provider;
 
 }
