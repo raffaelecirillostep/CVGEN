@@ -12,6 +12,6 @@ import java.util.List;
 public class LanguageSkill {
 
     private Language nativeLanguage;
-    private List<Language> technologies;
+    private List<Language> otherLanguage;
 
 }

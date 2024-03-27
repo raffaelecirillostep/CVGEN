@@ -13,7 +13,7 @@ import java.util.List;
 public class LanguageSkillDTO {
 
     private Language nativeLanguage;
-    private List<Language> technologies;
+    private List<LanguageDTO> otherLanguage;
 
 
 
