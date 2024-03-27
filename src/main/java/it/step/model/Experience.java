@@ -17,12 +17,12 @@ public class Experience {
     private String id;
     private Date startedAt;
     private Date endedAt;
-    private boolean inProgress;
+    private Boolean inProgress;
     private String jobTitle;
     private String projectName;
     private String customerName;
     private String description;
     private List<String> technologies;
-    private boolean isDeleted = false;
+    private Boolean isDeleted = false;
     private Date deletedAt;
 }

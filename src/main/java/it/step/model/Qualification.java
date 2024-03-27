@@ -13,7 +13,7 @@ public class Qualification {
 
     private Date initialDate;
     private Date endDate;
-    private boolean inProgress;
+    private Boolean inProgress;
     private String qualification;
     private String provider;
 

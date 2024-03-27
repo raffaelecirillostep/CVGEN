@@ -22,7 +22,7 @@ public class Project {
     private Date initialDate;
 	private Date endDate;
     private Customer customer;
-    private boolean isDeleted;
+    private Boolean isDeleted;
     private Date deletedAt;
 
 }

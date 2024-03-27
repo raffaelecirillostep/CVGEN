@@ -35,8 +35,8 @@ public class TechnologyServiceImpl implements TechnologyService {
 
     @Override
     public Technology deleteTechnology(Technology technology) {
-        technology.setDeleted(!technology.isDeleted());
-        if(technology.isDeleted()){
+        technology.setIsDeleted(!technology.getIsDeleted());
+        if(technology.getIsDeleted()){
             technology.setDeletedAt(new Date());
         } else {
             technology.setDeletedAt(null);

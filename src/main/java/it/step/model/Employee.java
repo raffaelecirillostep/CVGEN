@@ -26,7 +26,7 @@ public class Employee {
     private String nationality;
     private String telephone;
     private String email;
-    private boolean isDeleted = false;
+    private Boolean isDeleted = false;
     private Date deletedAt;
 
 }

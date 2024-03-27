@@ -45,7 +45,7 @@ public class LanguageServiceImpl implements LanguageService {
     public Language deleteById(String id) {
         Language lang = repo.findById(id).orElse(null);
         if(lang != null){
-            lang.setDeleted(true);
+            lang.setIsDeleted(true);
             lang.setDeletedAt(new Date());
         }
 

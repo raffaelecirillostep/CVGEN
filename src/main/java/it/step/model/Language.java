@@ -17,6 +17,6 @@ public class Language {
     @Id
     private String id;
     private String language;
-    private boolean isDeleted;
+    private Boolean isDeleted;
     private Date deletedAt;
 }
