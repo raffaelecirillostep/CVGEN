@@ -46,7 +46,7 @@ public class EmployeeController {
         try {
             List<Employee> employees = service.getAll();
             if (employees.isEmpty()) {
-                res = ResponseEntity.notFound().build();
+                res = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             } else {
                 res = ResponseEntity.ok(mapper.employeesToEmployeeDTOs(employees));
             }
@@ -77,12 +77,12 @@ public class EmployeeController {
     }
 
     @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<EmployeeDTO> saveOne(@RequestBody Employee employee){
+    public ResponseEntity<EmployeeDTO> saveOne(@RequestBody EmployeeDTO employeeDTO){
         ResponseEntity<EmployeeDTO> res = null;
         try{
-            if(employee != null){
-                employee.setId(null);
-                Employee emp = service.save(employee);
+            if(employeeDTO != null){
+                employeeDTO.setId(null);
+                Employee emp = service.save(mapper.employeeDTOToEmployee(employeeDTO));
                 res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(emp));
             }else{
                 res = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -96,11 +96,11 @@ public class EmployeeController {
     }
 
     @PutMapping(value = "/update", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<EmployeeDTO> updateOne(@RequestBody Employee employee){
+    public ResponseEntity<EmployeeDTO> updateOne(@RequestBody EmployeeDTO employeeDTO){
         ResponseEntity<EmployeeDTO> res = null;
         try{
-            if(employee != null){
-                Employee emp = service.update(employee);
+            if(employeeDTO != null){
+                Employee emp = service.update(mapper.employeeDTOToEmployee(employeeDTO));
                 res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(emp));
             }else{
                 res = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -121,7 +121,7 @@ public class EmployeeController {
             if(emp != null){
                 res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(emp));
             }else{
-                res = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+                res = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
         }catch(Exception e){
             e.printStackTrace();
