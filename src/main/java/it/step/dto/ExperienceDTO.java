@@ -21,7 +21,7 @@ public class ExperienceDTO {
     private String projectName;
     private String customerName;
     private String description;
-    private List<Technology> technologies;
-    private Boolean isDeleted = false;
+    private List<String> technologies;
+    private boolean isDeleted = false;
     private Date deletedAt;
 }
