@@ -19,5 +19,5 @@ public class DigitalSkill {
     private String skill;
     private Boolean isDeleted;
     private Date deletedAt;
-    
+
 }
