@@ -11,5 +11,5 @@ public class ProvinceDTO {
 
     private String id;
     private String sigla;
-    private  String provincia;
+    private String provincia;
 }

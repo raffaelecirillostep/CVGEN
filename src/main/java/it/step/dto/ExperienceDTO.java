@@ -16,7 +16,7 @@ public class ExperienceDTO {
     private String id;
     private Date startedAt;
     private Date endedAt;
-    private boolean inProgress;
+    private Boolean inProgress;
     private String jobTitle;
     private String projectName;
     private String customerName;
