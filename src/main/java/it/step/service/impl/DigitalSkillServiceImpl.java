@@ -1,12 +1,20 @@
 package it.step.service.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import it.step.model.DigitalSkill;
+import it.step.model.Province;
+import it.step.model.Technology;
 import it.step.repository.DigitalSkillRepo;
 import it.step.service.DigitalSkillService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +25,9 @@ import java.util.Optional;
 public class DigitalSkillServiceImpl implements DigitalSkillService {
     
     private final DigitalSkillRepo repo;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
     
     @Override
     public Optional<DigitalSkill> getDigitalSkillByID(String id) {
@@ -25,7 +36,8 @@ public class DigitalSkillServiceImpl implements DigitalSkillService {
 
     @Override
     public List<DigitalSkill> getAllDigitalSkills() {
-        return repo.findAll();
+
+        return repo.findAllByIsDeletedFalse();
     }
 
     @Override
@@ -35,13 +47,25 @@ public class DigitalSkillServiceImpl implements DigitalSkillService {
 
     @Override
     public DigitalSkill deleteDigitalSkill(DigitalSkill digitalSkill) {
-        digitalSkill.setIsDeleted(!digitalSkill.getIsDeleted());
-        if(digitalSkill.getIsDeleted()){
+        digitalSkill.setIsDeleted(true);
+
+        if (digitalSkill.getDeletedAt() == null) {
             digitalSkill.setDeletedAt(new Date());
-        } else {
-            digitalSkill.setDeletedAt(null);
         }
+
         repo.save(digitalSkill);
         return digitalSkill;
+    }
+
+
+    @Override
+    public void insertDigitalSkillFromJson(String jsonPath) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        if(repo.count() == 0)
+        {
+            List<DigitalSkill> lst = Arrays.asList(mapper.readValue(new ClassPathResource(jsonPath).getInputStream(),DigitalSkill[].class));
+            repo.saveAll(lst);
+        }
+
     }
 }

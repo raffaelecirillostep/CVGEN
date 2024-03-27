@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-@Document(collection = "digitalSkills")
+@Document(collection = "digitalskills")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +17,8 @@ public class DigitalSkill {
     @Id
     private String id;
     private String skill;
-    private Boolean isDeleted;
+    private String level;
+    private Boolean isDeleted = false;
     private Date deletedAt;
 
 }

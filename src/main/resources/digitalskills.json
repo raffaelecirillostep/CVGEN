@@ -1,0 +1,33 @@
+[
+  {
+    "skill": "Utilizzo di Microsoft Office",
+    "level": "Intermedio"},
+  {
+    "skill": "Navigazione web e utilizzo di motori di ricerca",
+    "level": "Base"
+  },
+  {
+    "skill": "Conoscenza di Adobe Photoshop",
+    "level": "Avanzato"
+  },
+  {
+    "skill": "Competenze di programmazione in HTML, CSS e JavaScript",
+    "level": "Intermedio"
+  },
+  {
+    "skill": "Sviluppo di applicazioni",
+    "level": "Avanzato"
+  },
+  {
+    "skill": "Gestione di database con SQL",
+    "level": "Avanzato"
+  },
+  {
+    "skill": "Sicurezza informatica e best practices",
+    "level": "Avanzato"
+  },
+  {
+    "skill": "Lavoro Agile",
+    "level": "Avanzato"
+  }
+]
