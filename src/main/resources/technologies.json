@@ -1,0 +1,106 @@
+[
+  {
+    "name": "Java",
+    "description": "Linguaggio di programmazione Back-End, multi-threading, fortemente tipizzato ed orientato agli oggetti"
+  },
+  {
+    "name": "JavaScript",
+    "description": "Linguaggio di scripting/programmazione"
+  },
+  {
+    "name": "TypeScript",
+    "description": "Superset di JavaScript"
+  },
+  {
+    "name": "Spring",
+    "description": "Framework per Back-End basato su linguaggio Java"
+  },
+  {
+    "name": "Spring-Boot",
+    "description": "Framework Spring con principali funzionalità pre-configurate"
+  },
+  {
+    "name": "Spring-Security",
+    "description": "Framework Spring con funzionalità di protezione in abito di autenticazione ed autorizzazione"
+  },
+  {
+    "name": "Spring-Data",
+    "description": "Framework Spring con funzionalità per gestire gli accessi ai sistemi DB relazionali e non"
+  },
+  {
+    "name": "Spring-MVC",
+    "description": "Framework Spring costruito sullo schema del pattern architetturale Model View Controller MVC"
+  },
+  {
+    "name": "Php",
+    "description": "Linguaggio di scripting/programmazione"
+  },
+  {
+    "name": "HTML",
+    "description": "Linguaggio di Markup di ipertesti"
+  },
+  {
+    "name": "CSS",
+    "description": "Linguaggio che aggiunge formattazione e stile a documenti HTML"
+  },
+  {
+    "name": "SCSS",
+    "description": "Superset di CSS"
+  },
+  {
+    "name": "SQL",
+    "description": "Linguaggio di manipolazione dati in sistemi RDBMS"
+  },
+  {
+    "name": "NoSQL",
+    "description": "Linguaggio di manipolazione sistemi di DB non relazionali"
+  },
+  {
+    "name": "PostgreSQL",
+    "description": "Sistema gestione DB relazionale RDBMS"
+  },
+  {
+    "name": "MySQL",
+    "description": "Sistema gestione DB relazionale RDBMS"
+  },
+  {
+    "name": "MongoDB",
+    "description": "Sistema gestione DB non relazionale"
+  },
+  {
+    "name": "Wordpress",
+    "description": "Piattaforma CMS (Content Management System) basato su Php"
+  },
+  {
+    "name": "Angular",
+    "description": "Framework per Front-End basato su components scritto in TypeScript/JavaScript"
+  },
+  {
+    "name": "React",
+    "description": "Framework per Front-End basato su components scritto in TypeScript/JavaScript"
+  },
+  {
+    "name": "Kotlin",
+    "description": "Linguaggio di programmazione per lo sviluppo di APP Android interoperabile con Java"
+  },
+  {
+    "name": "Hibernate",
+    "description": "Framework ORM per la persistenza dei dati in sistemi RDBMS"
+  },
+  {
+    "name": "JPA",
+    "description": "Framework per gestire la persistenza dei dati in sistemi RDBMS"
+  },
+  {
+    "name": "Node.js",
+    "description": "Ambiente di esecuzione open-source basato sul motore JavaScript V8 di Chrome"
+  },
+  {
+    "name": "Vue.js",
+    "description": "Framework JavaScript utilizzato per la costruzione di interfacce utente"
+  },
+  {
+    "name": "Ruby",
+    "description": "Ruby è un linguaggio di programmazione interpretato, orientato agli oggetti"
+  }
+]

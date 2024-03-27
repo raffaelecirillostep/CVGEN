@@ -12,6 +12,5 @@ public interface LanguageService {
     public List<Language> getAll ();
     public Language update(Language language);
     public Language deleteById(String id);
-
     void insertLanguageFromJson(String jsonPath) throws IOException;
 }

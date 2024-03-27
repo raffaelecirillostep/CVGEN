@@ -1,12 +1,17 @@
 package it.step.service.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import it.step.model.Technology;
 import it.step.repository.TechnologyRepo;
 import it.step.service.TechnologyService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.xml.transform.SourceLocator;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -43,5 +48,16 @@ public class TechnologyServiceImpl implements TechnologyService {
         }
         repo.save(technology);
         return technology;
+    }
+
+    @Override
+    public void insertTechnologiesFromJson(String jsonPath) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        if(repo.count() == 0)
+        {
+            List<Technology> lst = Arrays.asList(mapper.readValue(new ClassPathResource(jsonPath).getInputStream(),Technology[].class));
+            repo.saveAll(lst);
+        }
+
     }
 }
