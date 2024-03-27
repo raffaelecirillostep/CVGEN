@@ -16,7 +16,7 @@ public class Customer {
     @Id
     private String id;
     private String name;
-    private boolean isDeleted = false;
+    private Boolean isDeleted = false;
     private Date deletedAt;
 
 

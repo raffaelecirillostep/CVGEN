@@ -1,19 +1,17 @@
 package it.step.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Data;
 
-import java.time.LocalDate;
-import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Otherinfo {
+public class LanguageSkill {
 
-    private String title;
-    private String description;
+    private Language nativeLanguage;
+    private List<Language> technologies;
 
 }

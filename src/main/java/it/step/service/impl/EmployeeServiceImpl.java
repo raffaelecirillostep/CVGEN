@@ -39,7 +39,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee deleteById(String id) {
         Employee employee = repo.findById(id).orElse(null);
         if (employee != null) {
-            employee.setDeleted(true);
+            employee.setIsDeleted(true);
             employee.setDeletedAt(new Date());
         }
         return employee != null ? repo.save(employee) : null;

@@ -35,8 +35,8 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public Project deleProject(Project project) {
-        project.setDeleted(!project.isDeleted());
-        if(project.isDeleted()){
+        project.setIsDeleted(!project.getIsDeleted());
+        if(project.getIsDeleted()){
             project.setDeletedAt(new Date());
         } else {
             project.setDeletedAt(null);

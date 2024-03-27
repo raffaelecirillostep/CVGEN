@@ -8,21 +8,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-@Document(collection = "projects")
+@Document(collection = "languages")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Project {
+public class Language {
 
     @Id
     private String id;
-    private String order;
-    private String title;
-	private String description;
-    private Date initialDate;
-	private Date endDate;
-    private Customer customer;
+    private String language;
     private Boolean isDeleted;
     private Date deletedAt;
-
 }
