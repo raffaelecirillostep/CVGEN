@@ -13,6 +13,6 @@ public class TechnologyDTO {
     private String id;
     private String name;
     private String description;
-    private boolean isDeleted = false;
+    private Boolean isDeleted = false;
     private Date deletedAt;
 }

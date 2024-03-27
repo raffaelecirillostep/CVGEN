@@ -17,8 +17,8 @@ public class QualificationDTO {
     private String institute;
     private String description;
     private Date qualificationDate;
-    private int vote;
-    private boolean isDeleted;
+    private Integer vote;
+    private Boolean isDeleted;
     private Date deletedAt;
 
 }

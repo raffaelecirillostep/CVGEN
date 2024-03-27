@@ -15,9 +15,6 @@ public class TownDTO {
 
     private String id;
 
-
-    private Integer ID;
-
     private Date DATAISTITUZIONE;
 
     private Date DATACESSAZIONE;
