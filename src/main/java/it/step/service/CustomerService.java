@@ -11,7 +11,6 @@ public interface CustomerService {
     public Customer save(Customer customer);
     public Optional<Customer> getOneById (String id);
     public List<Customer> getAll ();
-    public Customer update(Customer customer);
-    public Customer deleteById(String id);
+    public Optional<Customer> deleteById(String id);
 
 }

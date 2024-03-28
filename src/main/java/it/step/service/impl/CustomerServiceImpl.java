@@ -29,25 +29,17 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<Customer> getAll() {
-        return repo.findAll();
+        return repo.findAllByIsDeletedFalse();
     }
 
     @Override
-    public Customer update(Customer customer) {
-        if(repo.existsById(customer.getId()))
-            return repo.save(customer);
-        else
-            return null;
-    }
-
-    @Override
-    public Customer deleteById(String id) {
-        Customer customer = repo.findById(id).orElse(null);
-        if(customer != null && !customer.getIsDeleted()) {
-            customer.setIsDeleted(true);
-            customer.setDeletedAt(new Date());
-            customer = repo.save(customer);
+    public Optional<Customer> deleteById(String id) {
+        Optional<Customer> c = repo.findById(id);
+        if (c.isPresent()) {
+            c.get().setIsDeleted(true);
+            c.get().setDeletedAt(new Date());
+            repo.save(c.get());
         }
-        return customer;
+        return c;
     }
 }
