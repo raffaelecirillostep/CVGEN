@@ -35,7 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Optional<Customer> deleteById(String id) {
         Optional<Customer> c = repo.findById(id);
-        if(c.isPresent()) {
+        if (c.isPresent()) {
             c.get().setIsDeleted(true);
             c.get().setDeletedAt(new Date());
             repo.save(c.get());

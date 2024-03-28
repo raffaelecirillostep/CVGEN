@@ -13,7 +13,8 @@ public class DigitalSkillDTO {
 
     private String id;
     private String skill;
-    private Boolean isDeleted;
+    private String level;
+    private Boolean isDeleted = false;
     private Date deletedAt;
 
 }
