@@ -68,6 +68,26 @@ public class DigitalSkillController {
         }
     }
 
+    @PutMapping("update")
+    public ResponseEntity<DigitalSkillDTO> updateDigitalSkill(@RequestBody DigitalSkillDTO digitalSkillDTO) {
+        try {
+            if(digitalSkillDTO.getId().isEmpty()){
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+
+            DigitalSkillDTO dto;
+        DigitalSkill digitalSkill = digitalSkillMapper.digitalSkillDtoToDigitalSkill(digitalSkillDTO);
+
+        dto = digitalSkillMapper.digitalSkillToDigitalSkillDto(digitalSkill);
+
+            return new ResponseEntity<>(dto, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteDigitalSkill(@PathVariable DigitalSkill id) {
         try {
