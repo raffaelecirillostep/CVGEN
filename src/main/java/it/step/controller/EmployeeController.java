@@ -23,7 +23,7 @@ public class EmployeeController {
     private final EmployeeMapper mapper;
 
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<EmployeeDTO>> getAllByIsDeletedFalse(/*@RequestParam(value = "page") Integer page, @RequestParam(value = "num") Integer number4Page*/ ){
+    public ResponseEntity<List<EmployeeDTO>> getAllByIsDeletedFalse(){
         ResponseEntity<List<EmployeeDTO>> res = null;
         try {
             List<Employee> employees = service.findAllByIsDeletedFalse();
@@ -36,6 +36,7 @@ public class EmployeeController {
             e.printStackTrace();
             res = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
+
         return res;
     }
 
@@ -54,6 +55,7 @@ public class EmployeeController {
             e.printStackTrace();
             res = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
+
         return res;
     }
 
