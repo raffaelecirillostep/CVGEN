@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -22,8 +23,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer getOneById(String id) {
-        return repo.findById(id).orElse(null);
+    public Optional<Customer> getOneById(String id) {
+        return repo.findById(id);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Customer deleteById(String id) {
         Customer c = repo.findById(id).orElse(null);
-        if(c != null) {
+        if(c != null && !c.getIsDeleted()) {
             c.setIsDeleted(true);
             c.setDeletedAt(new Date());
         }

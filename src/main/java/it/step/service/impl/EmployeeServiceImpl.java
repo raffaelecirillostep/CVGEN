@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
+
 @Transactional
 @Service
 @RequiredArgsConstructor
@@ -21,13 +23,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee getOneById(String id) {
-        return repo.findById(id).orElse(null);
+    public Optional<Employee> getOneById(String id) {
+        return repo.findById(id);
     }
 
     @Override
     public List<Employee> getAll() {
         return repo.findAll();
+    }
+
+    @Override
+    public List<Employee> findAllByIsDeletedFalse() {
+        return repo.findAllByIsDeletedFalse();
     }
 
     @Override
@@ -38,7 +45,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee deleteById(String id) {
         Employee employee = repo.findById(id).orElse(null);
-        if (employee != null) {
+        if (employee != null && !employee.getIsDeleted()) {
             employee.setIsDeleted(true);
             employee.setDeletedAt(new Date());
         }
