@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -22,27 +23,23 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer getOneById(String id) {
-        return repo.findById(id).orElse(null);
+    public Optional<Customer> getOneById(String id) {
+        return repo.findById(id);
     }
 
     @Override
     public List<Customer> getAll() {
-        return repo.findAll();
+        return repo.findAllByIsDeletedFalse();
     }
 
     @Override
-    public Customer update(Customer customer) {
-        return repo.save(customer);
-    }
-
-    @Override
-    public Customer deleteById(String id) {
-        Customer c = repo.findById(id).orElse(null);
-        if(c != null) {
-            c.setIsDeleted(true);
-            c.setDeletedAt(new Date());
+    public Optional<Customer> deleteById(String id) {
+        Optional<Customer> c = repo.findById(id);
+        if(c.isPresent()) {
+            c.get().setIsDeleted(true);
+            c.get().setDeletedAt(new Date());
+            repo.save(c.get());
         }
-        return c != null ? repo.save(c) : null;
+        return c;
     }
 }
