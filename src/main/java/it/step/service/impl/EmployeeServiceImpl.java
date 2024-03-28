@@ -39,7 +39,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee update(Employee employee) {
-        return repo.save(employee);
+        if(repo.existsById(employee.getId()))
+            return repo.save(employee);
+        else
+            return null;
     }
 
     @Override
@@ -48,7 +51,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (employee != null && !employee.getIsDeleted()) {
             employee.setIsDeleted(true);
             employee.setDeletedAt(new Date());
+            employee = repo.save(employee);
         }
-        return employee != null ? repo.save(employee) : null;
+        return employee;
     }
 }

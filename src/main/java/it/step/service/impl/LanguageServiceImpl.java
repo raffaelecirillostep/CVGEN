@@ -39,18 +39,22 @@ public class LanguageServiceImpl implements LanguageService {
 
     @Override
     public Language update(Language language) {
-        return repo.save(language);
+        if(repo.existsById(language.getId()))
+            return repo.save(language);
+        else
+            return null;
     }
 
     @Override
     public Language deleteById(String id) {
-        Language lang = repo.findById(id).orElse(null);
-        if(lang != null && !lang.getIsDeleted()){
-            lang.setIsDeleted(true);
-            lang.setDeletedAt(new Date());
+        Language language = repo.findById(id).orElse(null);
+        if(language != null && !language.getIsDeleted()){
+            language.setIsDeleted(true);
+            language.setDeletedAt(new Date());
+            language = repo.save(language);
         }
 
-        return lang != null ? repo.save(lang) : null;
+        return language;
     }
 
     @Override
