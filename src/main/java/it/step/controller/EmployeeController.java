@@ -64,7 +64,7 @@ public class EmployeeController {
     public ResponseEntity<EmployeeDTO> getById(@PathVariable(name = "id") String id) {
         ResponseEntity<EmployeeDTO> res = null;
         try {
-            if (id != null) {
+            if (id != null && !id.isEmpty()) {
                 Optional<Employee> employee = service.getOneById(id);
                 if (employee.isPresent()) {
                     res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(employee.get()));
@@ -106,7 +106,7 @@ public class EmployeeController {
         ResponseEntity<EmployeeDTO> res = null;
         try {
             if (employeeDTO != null) {
-                if (employeeDTO.getId() != null) {
+                if (employeeDTO.getId() != null && !employeeDTO.getId().isEmpty()) {
                     Employee emp = service.update(mapper.employeeDTOToEmployee(employeeDTO));
                     if (emp != null) {
                         res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(emp));
@@ -131,7 +131,7 @@ public class EmployeeController {
     public ResponseEntity<EmployeeDTO> deleteById(@PathVariable(name = "id") String id) {
         ResponseEntity<EmployeeDTO> res = null;
         try {
-            if (id != null) {
+            if (id != null && !id.isEmpty()) {
                 Employee emp = service.deleteById(id);
                 if (emp != null) {
                     res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(emp));
