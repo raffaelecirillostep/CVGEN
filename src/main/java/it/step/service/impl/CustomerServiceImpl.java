@@ -34,16 +34,20 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer update(Customer customer) {
-        return repo.save(customer);
+        if(repo.existsById(customer.getId()))
+            return repo.save(customer);
+        else
+            return null;
     }
 
     @Override
     public Customer deleteById(String id) {
-        Customer c = repo.findById(id).orElse(null);
-        if(c != null && !c.getIsDeleted()) {
-            c.setIsDeleted(true);
-            c.setDeletedAt(new Date());
+        Customer customer = repo.findById(id).orElse(null);
+        if(customer != null && !customer.getIsDeleted()) {
+            customer.setIsDeleted(true);
+            customer.setDeletedAt(new Date());
+            customer = repo.save(customer);
         }
-        return c != null ? repo.save(c) : null;
+        return customer;
     }
 }

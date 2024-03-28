@@ -23,7 +23,7 @@ public class EmployeeController {
     private final EmployeeMapper mapper;
 
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<EmployeeDTO>> getAllByIsDeletedFalse(){
+    public ResponseEntity<List<EmployeeDTO>> getAllByIsDeletedFalse() {
         ResponseEntity<List<EmployeeDTO>> res = null;
         try {
             List<Employee> employees = service.findAllByIsDeletedFalse();
@@ -32,7 +32,7 @@ public class EmployeeController {
             } else {
                 res = ResponseEntity.ok(mapper.employeesToEmployeeDTOs(employees));
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             res = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
@@ -42,7 +42,7 @@ public class EmployeeController {
 
 
     @GetMapping(value = "/all/includeDeleted", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<EmployeeDTO>> getAll(){
+    public ResponseEntity<List<EmployeeDTO>> getAllIncludeDeleted() {
         ResponseEntity<List<EmployeeDTO>> res = null;
         try {
             List<Employee> employees = service.getAll();
@@ -51,7 +51,7 @@ public class EmployeeController {
             } else {
                 res = ResponseEntity.ok(mapper.employeesToEmployeeDTOs(employees));
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             res = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
@@ -61,16 +61,20 @@ public class EmployeeController {
 
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<EmployeeDTO> getById(@PathVariable(name = "id") String id){
+    public ResponseEntity<EmployeeDTO> getById(@PathVariable(name = "id") String id) {
         ResponseEntity<EmployeeDTO> res = null;
         try {
-            Optional<Employee> employee = service.getOneById(id);
-            if (employee.isPresent()) {
-                res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(employee.get()));
+            if (id != null && !id.isEmpty()) {
+                Optional<Employee> employee = service.getOneById(id);
+                if (employee.isPresent()) {
+                    res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(employee.get()));
+                } else {
+                    res = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+                }
             } else {
-                res = ResponseEntity.notFound().build();
+                res = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             res = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
@@ -79,17 +83,17 @@ public class EmployeeController {
     }
 
     @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<EmployeeDTO> saveOne(@RequestBody EmployeeDTO employeeDTO){
+    public ResponseEntity<EmployeeDTO> saveOne(@RequestBody EmployeeDTO employeeDTO) {
         ResponseEntity<EmployeeDTO> res = null;
-        try{
-            if(employeeDTO != null){
+        try {
+            if (employeeDTO != null) {
                 employeeDTO.setId(null);
                 Employee emp = service.save(mapper.employeeDTOToEmployee(employeeDTO));
                 res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(emp));
-            }else{
+            } else {
                 res = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             res = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
@@ -98,16 +102,24 @@ public class EmployeeController {
     }
 
     @PutMapping(value = "/update", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<EmployeeDTO> updateOne(@RequestBody EmployeeDTO employeeDTO){
+    public ResponseEntity<EmployeeDTO> updateOne(@RequestBody EmployeeDTO employeeDTO) {
         ResponseEntity<EmployeeDTO> res = null;
-        try{
-            if(employeeDTO != null){
-                Employee emp = service.update(mapper.employeeDTOToEmployee(employeeDTO));
-                res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(emp));
-            }else{
+        try {
+            if (employeeDTO != null) {
+                if (employeeDTO.getId() != null && !employeeDTO.getId().isEmpty()) {
+                    Employee emp = service.update(mapper.employeeDTOToEmployee(employeeDTO));
+                    if (emp != null) {
+                        res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(emp));
+                    } else {
+                        res = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+                    }
+                } else {
+                    res = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+                }
+            } else {
                 res = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             res = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
@@ -116,16 +128,20 @@ public class EmployeeController {
     }
 
     @DeleteMapping(value = "delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<EmployeeDTO> deleteById(@PathVariable(name = "id") String id){
+    public ResponseEntity<EmployeeDTO> deleteById(@PathVariable(name = "id") String id) {
         ResponseEntity<EmployeeDTO> res = null;
-        try{
-            Employee emp = service.deleteById(id);
-            if(emp != null){
-                res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(emp));
-            }else{
-                res = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        try {
+            if (id != null && !id.isEmpty()) {
+                Employee emp = service.deleteById(id);
+                if (emp != null) {
+                    res = ResponseEntity.ok(mapper.employeeToEmployeeDTO(emp));
+                } else {
+                    res = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+                }
+            } else {
+                res = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             res = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
